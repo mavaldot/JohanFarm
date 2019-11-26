@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox fx:controller="controller.GameController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
    <children>
-      <AnchorPane fx:id="ap" prefHeight="395.0" prefWidth="600.0" />
+      <AnchorPane fx:id="ap" prefHeight="395.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="99.0" fitWidth="123.0" layoutX="66.0" layoutY="91.0">
+               <image>
+                  <Image url="@../../res/tilapia.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="153.0" layoutX="224.0" layoutY="91.0">
+               <image>
+                  <Image url="@../../res/trout.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="110.0" layoutY="82.0" text="Tilapia" />
+            <Label layoutX="282.0" layoutY="73.0" text="Trout" />
+            <Button layoutX="110.0" layoutY="185.0" mnemonicParsing="false" onAction="#addTilapia" text="BUY" />
+            <Button layoutX="261.0" layoutY="355.0" mnemonicParsing="false" onAction="#saveGame" text="SAVE GAME" />
+         </children></AnchorPane>
    </children>
 </VBox>

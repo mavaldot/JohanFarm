@@ -1,5 +1,56 @@
 package model;
 
-public class Tilapia extends Trout {
+import java.io.Serializable;
 
+public class Tilapia extends Fish implements Serializable {
+
+	public static final double VALUE = 0.5;
+	
+	private Tilapia next;
+	private Tilapia prev;
+	
+	public Tilapia(int num, double size) {
+		super(num, size);
+	}
+
+	public Tilapia getNext() {
+		return next;
+	}
+
+	public Tilapia getPrev() {
+		return prev;
+	}
+
+	
+	public void setNext(Tilapia next) {
+		this.next = next;
+	}
+
+	public void setPrev(Tilapia prev) {
+		this.prev = prev;
+	}
+
+	@Override
+	public double addMoney() {
+		
+		if (next == null)
+			return VALUE;
+	
+		return VALUE + next.addMoney();
+		
+	}
+	
+	public void addTilapia(Tilapia t) {
+		
+		if (next == null) {
+			t.setPrev(this);
+			next = t;
+		}
+			
+		else
+			next.addTilapia(t);
+		
+	}
+	
+	
 }

@@ -2,6 +2,6 @@ package model;
 
 public interface MoneyMultiplier {
 
-	public void multiply();
+	public double multiplyMoney(double money);
 	
 }

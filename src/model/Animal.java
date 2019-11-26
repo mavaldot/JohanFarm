@@ -1,7 +1,12 @@
 package model;
 
-public class Animal {
+import java.io.Serializable;
 
-	private String name;
-	
+public abstract class Animal implements Serializable {
+
+	protected int number;
+
+	public Animal(int num) {
+		number = num;
+	}
 }
