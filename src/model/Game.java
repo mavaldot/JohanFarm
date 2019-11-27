@@ -41,6 +41,15 @@ public class Game implements Serializable, Beginner {
 	}
 	
 	/**
+	 * Sets a new value to money attribute
+	 * 
+	 * @param money The money to be set
+	 */
+	public void setMoney(double money) {
+		this.money = money;
+	}
+	
+	/**
 	 * Initializes the variables for when a new game is started
 	 */
 	public void begin() {
