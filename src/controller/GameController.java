@@ -3,6 +3,7 @@ package controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import exception.DuplicateValueException;
 import exception.GameSerializationException;
 import exception.InvalidTimeException;
 import exception.InvalidTimeFileException;
@@ -21,14 +22,28 @@ import thread.GameThread;
 import thread.TimeThread;
 import view.Main;
 
+/**
+ * 
+ * The game controller that connects the Game.fxml file in the view with the model
+ * 
+ * @author Mateo
+ *
+ */
 public class GameController implements Initializable, Beginner {
 
 	private Stage stage;
 	
-	@FXML private Label l1;
-	@FXML private Label l2;
+	@FXML private Label moneyLabel;
+	@FXML private Label timeLabel;
 	
 	@FXML private AnchorPane ap;
+	
+	@FXML private Label l1;
+	@FXML private Label l2;
+	@FXML private Label l3;
+	@FXML private Label l4;
+	@FXML private Label l5;
+	@FXML private Label l6;
 	
 	private Time time;
 	private TimeThread tt;
@@ -52,12 +67,12 @@ public class GameController implements Initializable, Beginner {
 		try {
 			game = fHandler.loadGame();
 			time = fHandler.loadTime();
-		} catch (GameSerializationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvalidTimeFileException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		}
+		catch (GameSerializationException e) {
+//			e.printStackTrace();
+		} 
+		catch (InvalidTimeFileException e) {
+//			e.printStackTrace();
 		}
 		
 		if (time == null) 
@@ -81,15 +96,15 @@ public class GameController implements Initializable, Beginner {
 		
 		begin();
 		
-		l1 = new Label();
-		l1.setText("hello");
+		moneyLabel = new Label();
+		moneyLabel.setText("hello");
 		
-		l2 = new Label();
-		l2.setTranslateX(200);
-		l2.setText("johan");
+		timeLabel = new Label();
+		timeLabel.setTranslateX(600);
+		timeLabel.setText("johan");
 		
-		ap.getChildren().add(l1);
-		ap.getChildren().add(l2);
+		ap.getChildren().add(moneyLabel);
+		ap.getChildren().add(timeLabel);
 	
 //		new AnimationTimer() {
 //
@@ -102,30 +117,66 @@ public class GameController implements Initializable, Beginner {
 //		}.start();
 	}
 	
-	public void updateL1() {
+	public void updateLabels() {
 		
-		l1.setText(String.format("Money: %.1f", game.getMoney()));
+		moneyLabel.setText(String.format("Money: %.1f", game.getMoney()));
+		
+		l1.setText("Quantity: " + game.getNumTilapia());
+		l2.setText("Quantity: " + game.getNumTrouts());
+		l3.setText("Quantity: " + game.getNumChickens());
+		l4.setText("Quantity: " + game.getNumDucks());
+		l5.setText("Quantity: " + game.getNumCows());
+		l6.setText("Quantity: " + game.getNumDogs());
 		
 	}
 
 	public void updateTime() {
-		l2.setText(time.getTime());
+		timeLabel.setText("Time: " + time.getTime());
 	}
 	
 	public void addTilapia(ActionEvent e) {
 		game.addTilapia();
 	}
 	
+	public void addTrout(ActionEvent e) {
+		try {
+			game.addTrout();
+		} catch (DuplicateValueException e1) {
+//			e1.printStackTrace();
+		}
+	}
+	
+	public void addChicken(ActionEvent e) {
+		game.addChicken();
+	}
+	
+	public void addDuck(ActionEvent e) {
+		try {
+			game.addDuck();
+		}
+		catch (DuplicateValueException e1) {
+//			e1.printStackTrace();
+		}
+	}
+	
+	public void addCow(ActionEvent e) {
+		game.addCow();
+	}
+	
+	public void addDog(ActionEvent e) {
+		game.addDog();
+	}
+	
 	public void saveGame(ActionEvent e) {
 		try {
 			fHandler.saveGame(game);
 			fHandler.saveTime(time);
-		} catch (GameSerializationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (InvalidTimeException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		}
+		catch (GameSerializationException e1) {
+//			e1.printStackTrace();
+		} 
+		catch (InvalidTimeException e1) {
+//			e1.printStackTrace();
 		}
 		
 	}

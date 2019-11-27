@@ -4,13 +4,15 @@ import java.io.Serializable;
 
 public class Tilapia extends Fish implements Serializable {
 
-	public static final double VALUE = 0.5;
+	public static final double VALUE = 0.1;
+	
+	public static final double PRICE = 1;
 	
 	private Tilapia next;
 	private Tilapia prev;
 	
 	public Tilapia(int num, double size) {
-		super(num, size);
+		super(num, PRICE, size);
 	}
 
 	public Tilapia getNext() {

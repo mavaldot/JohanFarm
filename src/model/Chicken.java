@@ -3,11 +3,12 @@ package model;
 public class Chicken extends Bird {
 
 	public static final double MULTIPLIER = 1.01;
+	public static final double PRICE = 10;
 	
 	private Chicken next;
 	
 	public Chicken(int num, int epw) {
-		super(num, epw);
+		super(num, PRICE, epw);
 		// TODO Auto-generated constructor stub
 	}
 

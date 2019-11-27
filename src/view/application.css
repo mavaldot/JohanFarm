@@ -4,3 +4,11 @@
 	-fx-font: bold 9pt "Arial";
 	
 }
+
+.button {
+	
+	-fx-bakcground-color: khaki;
+	-fx-background-radius: 5;
+	-fx-font: bold 10pt "Arial";
+	
+}

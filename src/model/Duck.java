@@ -3,14 +3,15 @@ package model;
 import exception.DuplicateValueException;
 
 public class Duck extends Bird {
-
+	
 	public static final double MULTIPLIER = 1.02;
+	public static final double PRICE = 50;
 	
 	private Duck left;
 	private Duck right;
 	
 	public Duck(int num, int epw) {
-		super(num, epw);
+		super(num, PRICE, epw);
 		// TODO Auto-generated constructor stub
 	}
 

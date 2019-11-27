@@ -21,10 +21,10 @@ public class GameThread extends Thread {
 			
 			game.calculateMoney();
 			
-			Platform.runLater(() -> gc.updateL1());
+			Platform.runLater(() -> gc.updateLabels());
 			
 			try {
-				sleep(500);
+				sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

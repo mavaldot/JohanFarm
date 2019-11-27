@@ -6,13 +6,14 @@ import exception.DuplicateValueException;
 
 public class Trout extends Fish implements Serializable {
 
-	public static final double VALUE = 1;
+	public static final double VALUE = 0.3;
+	public static final double PRICE = 3;
 	
 	private Trout left;
 	private Trout right;
 	
 	public Trout(int num, double size) {
-		super(num, size);
+		super(num, PRICE, size);
 		// TODO Auto-generated constructor stub
 	}
 	
