@@ -38,7 +38,7 @@ class TroutTest {
 	}
 	
 	@Test
-	public void addDuckTest2() {
+	public void addTroutTest2() {
 		
 		loadScene1();
 		try {
