@@ -11,11 +11,23 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * Controls the first menu window
+ * 
+ * @author Mateo
+ *
+ */
 public class MenuController {
 	
 	@FXML
 	private Button start;
 	
+	/**
+	 * Starts the game. Let's enjoy! The world is yours.
+	 * 
+	 * @param e JAVAFX ACTION EVENT
+	 * @throws IOException
+	 */
 	public void startGame(ActionEvent e) throws IOException {
 		
 		Scene menuScene = ((Node) e.getSource()).getScene();

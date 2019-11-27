@@ -1,7 +1,13 @@
-package model;
+	package model;
 
 import java.io.Serializable;
 
+/**
+ * Abstract class to represent animals (any kind) in the context of the application's world
+ * 
+ * @author Mateo
+ *
+ */
 public abstract class Animal implements Serializable {
 
 	protected int number;
@@ -12,10 +18,18 @@ public abstract class Animal implements Serializable {
 		price = pric;
 	}
 	
+	/**
+	 * 
+	 * @return the number
+	 */
 	public int getNumber() {
 		return number;
 	}
 	
+	/**
+	 * 
+	 * @return the price
+	 */
 	public double getPrice() {
 		return price;
 	}

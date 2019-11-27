@@ -14,14 +14,29 @@ import exception.GameSerializationException;
 import exception.InvalidTimeException;
 import exception.InvalidTimeFileException;
 
+/**
+ * A class to handle all the program's IO (saves and loads files)
+ * 
+ * @author Mateo
+ *
+ */
 public class FileHandler {
 	
 	private final String TIMEFILE = "time.txt";
 	private final String GAMEFILE = "game.sav";
 	
+	/**
+	 * Constructor
+	 */
 	public FileHandler() {
 	}
 	
+	/**
+	 * Saves the time in a .txt file
+	 * 
+	 * @param time The time that will be saved
+	 * @throws InvalidTimeException
+	 */
 	public void saveTime(Time time) throws InvalidTimeException {
 		
 		File tf = new File(TIMEFILE);
@@ -37,7 +52,12 @@ public class FileHandler {
 		}
 		
 	}
-	
+	/**
+	 * Loads the time from a .txt file
+	 * 
+	 * @return The time 
+	 * @throws InvalidTimeFileException
+	 */
 	public Time loadTime() throws InvalidTimeFileException {
 		
 		File tf = new File(TIMEFILE);
@@ -60,6 +80,12 @@ public class FileHandler {
 		
 	}
 	
+	/**
+	 * Saves the game via serialization
+	 * 
+	 * @param game The game that will be saved
+	 * @throws GameSerializationException
+	 */
 	public void saveGame(Game game) throws GameSerializationException {
 		
 		File gf = new File(GAMEFILE);
@@ -76,6 +102,12 @@ public class FileHandler {
 		
 	}
 	
+	/**
+	 * Loads the game from a serialized file
+	 * 
+	 * @return The game that was loaded
+	 * @throws GameSerializationException
+	 */
 	public Game loadGame() throws GameSerializationException {
 		
 		File gf = new File(GAMEFILE);

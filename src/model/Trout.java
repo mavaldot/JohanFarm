@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 import exception.DuplicateValueException;
 
+/**
+ * A class that represent the trouts in the farm. Trouts are represented by binary tree.
+ * 
+ * @author Mateo
+ *
+ */
 public class Trout extends Fish implements Serializable {
 
 	public static final double VALUE = 0.3;
@@ -12,11 +18,36 @@ public class Trout extends Fish implements Serializable {
 	private Trout left;
 	private Trout right;
 	
+	/**
+	 * Constructor
+	 * 
+	 * @param num The trout's number
+	 * @param size The trout's size
+	 */
 	public Trout(int num, double size) {
 		super(num, PRICE, size);
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * 
+	 * @return The trout to the left of this trout
+	 */
+	public Trout getLeft() {
+		return left;
+	}
+
+	/**
+	 * 
+	 * @return The trout to the right of this trout
+	 */
+	public Trout getRight() {
+		return right;
+	}
+
+	/**
+	 * Adds up all the trouts values in the binary tree
+	 */
 	@Override
 	public double addMoney() {
 
@@ -27,6 +58,12 @@ public class Trout extends Fish implements Serializable {
 		
 	}
 	
+	/**
+	 * Adds a new trout to this binary tree
+	 * 
+	 * @param t the new trout
+	 * @throws DuplicateValueException
+	 */
 	public void addTrout(Trout t) throws DuplicateValueException {
 		
 		if (t.number < number) {

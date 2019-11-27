@@ -6,6 +6,12 @@ import java.util.Random;
 
 import exception.DuplicateValueException;
 
+/**
+ * Class that handles the game's important functions and holds all the animals and data
+ * 
+ * @author Mateo
+ *
+ */
 public class Game implements Serializable, Beginner {
 
 	private Trout rootTrout;
@@ -27,10 +33,16 @@ public class Game implements Serializable, Beginner {
 	
 	private final Random rand = new Random();
 	
+	/**
+	 * Constructor
+	 */
 	public Game() {
 		
 	}
 	
+	/**
+	 * Initializes the variables for when a new game is started
+	 */
 	public void begin() {
 		money = 5;
 		numTrouts = 0;
@@ -43,60 +55,114 @@ public class Game implements Serializable, Beginner {
 		dogs = new ArrayList<Dog>();
 	}
 	
-	
-	
+	/**
+	 * 
+	 * @return The first trout in the binary tree
+	 */
 	public Trout getRootTrout() {
 		return rootTrout;
 	}
 
+	/**
+	 * 
+	 * @return The first tilapia in the linked list
+	 */
 	public Tilapia getFirstTilapia() {
 		return firstTilapia;
 	}
 
+	/**
+	 * 
+	 * @return The first chicken in the linked list
+	 */
 	public Chicken getFirstChicken() {
 		return firstChicken;
 	}
 
+	/**
+	 * 
+	 * @return The root duck in the binary tree
+	 */
 	public Duck getRootDuck() {
 		return rootDuck;
 	}
-
+	
+	/**
+	 * 
+	 * @return The first cow in the linked list
+	 */
 	public Cow getFirstCow() {
 		return firstCow;
 	}
 
+	/**
+	 * 
+	 * @return The dog arraylist
+	 */
 	public ArrayList<Dog> getDogs() {
 		return dogs;
 	}
 
+	/**
+	 * 
+	 * @return number of trouts in the farm
+	 */
 	public int getNumTrouts() {
 		return numTrouts;
 	}
 
+	/**
+	 * 
+	 * @return number of tilapia in the farm
+	 */
 	public int getNumTilapia() {
 		return numTilapia;
 	}
 
+	/**
+	 * 
+	 * @return number of chickens in the farm
+	 */
 	public int getNumChickens() {
 		return numChickens;
 	}
 
+	/**
+	 * 
+	 * @return number of ducks in the farm
+	 */
 	public int getNumDucks() {
 		return numDucks;
 	}
 
+	/**
+	 * 
+	 * @return number of cows in the farm
+	 */
 	public int getNumCows() {
 		return numCows;
 	}
 
+	/**
+	 * 
+	 * @return number of dog in the farm
+	 */
 	public int getNumDogs() {
 		return numDogs;
 	}
 
+	/**
+	 * 
+	 * @return The random object
+	 */
 	public Random getRand() {
 		return rand;
 	}
 
+	/**
+	 * Adds all the money earned by the animals. The money attribute is modified
+	 * 
+	 */
 	public void calculateMoney() {
 		
 		money += firstTilapia != null ? firstTilapia.addMoney() : 0;
@@ -107,12 +173,19 @@ public class Game implements Serializable, Beginner {
 		
 	}
 	
+	/**
+	 * 
+	 * @return The money earned
+	 */
 	public double getMoney() {
 		
 		return money;
 		
 	}
 	
+	/**
+	 * Adds a new tilapia to the game
+	 */
 	public void addTilapia() {
 		
 		if (money >= Tilapia.PRICE) {
@@ -132,6 +205,11 @@ public class Game implements Serializable, Beginner {
 		
 	}
 
+	/**
+	 * Adds a new trout to the game
+	 * 
+	 * @throws DuplicateValueException
+	 */
 	public void addTrout() throws DuplicateValueException {
 		
 		if (money >= Trout.PRICE) {
@@ -151,6 +229,10 @@ public class Game implements Serializable, Beginner {
 		}
 	}
 
+	/**
+	 * Adds a new chicken to game
+	 * 
+	 */
 	public void addChicken() {
 		
 		if (money >= Chicken.PRICE) {
@@ -170,6 +252,11 @@ public class Game implements Serializable, Beginner {
 		}
 	}
 
+	/**
+	 * adds a new duck to the game
+	 * 
+	 * @throws DuplicateValueException
+	 */
 	public void addDuck() throws DuplicateValueException {
 		
 		if (money >= Duck.PRICE) {
@@ -190,6 +277,10 @@ public class Game implements Serializable, Beginner {
 		
 	}
 
+	/**
+	 * Adds a new cow to game
+	 * 
+	 */
 	public void addCow() {
 		
 		if (money >= Cow.PRICE) {
@@ -213,6 +304,10 @@ public class Game implements Serializable, Beginner {
 		
 	}
 
+	/**
+	 * Adds a new dog to game
+	 * 
+	 */
 	public void addDog() {
 		
 		if (money >= Dog.PRICE) {

@@ -7,8 +7,19 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.fxml.FXMLLoader;
 
-
+/**
+ * Main class. Entry point of the application
+ * 
+ * @author Mateo
+ *
+ */
 public class Main extends Application {
+	
+	/**
+	 * Sets up the stage and inits the scene
+	 * 
+	 * @param primaryStage the main stage that will be rendered
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -23,6 +34,11 @@ public class Main extends Application {
 		}
 	}
 	
+	/**
+	 * Main method
+	 * 
+	 * @param args command-line arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

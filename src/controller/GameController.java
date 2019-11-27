@@ -19,6 +19,7 @@ import model.FileHandler;
 import model.Game;
 import model.Time;
 import thread.GameThread;
+import thread.MusicThread;
 import thread.TimeThread;
 import view.Main;
 
@@ -58,6 +59,10 @@ public class GameController implements Initializable, Beginner {
 		
 	}
 	
+	/**
+	 * Initializes many important variables and does file I/0. Also starts the threads.
+	 * 
+	 */
 	public void begin() {
 		
 		ap.getStylesheets().add(Main.class.getResource("application.css").toExternalForm());
@@ -89,8 +94,14 @@ public class GameController implements Initializable, Beginner {
 		
 		new GameThread(game, this).start();
 		
+		new MusicThread().start();
 	}
 
+	
+	/**
+	 * Creates some graphical components of the window that the application will use
+	 * 
+	 */
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		
@@ -117,6 +128,10 @@ public class GameController implements Initializable, Beginner {
 //		}.start();
 	}
 	
+	/**
+	 * Updates the labels related to the game information
+	 * 
+	 */
 	public void updateLabels() {
 		
 		moneyLabel.setText(String.format("Money: %.1f", game.getMoney()));
@@ -130,14 +145,28 @@ public class GameController implements Initializable, Beginner {
 		
 	}
 
+	/**
+	 * Update the time label
+	 * 
+	 */
 	public void updateTime() {
 		timeLabel.setText("Time: " + time.getTime());
 	}
 	
+	/**
+	 * calls the game method to add a new tilapia
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void addTilapia(ActionEvent e) {
 		game.addTilapia();
 	}
 	
+	/**
+	 * calls the game method to add a new trout
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void addTrout(ActionEvent e) {
 		try {
 			game.addTrout();
@@ -146,10 +175,20 @@ public class GameController implements Initializable, Beginner {
 		}
 	}
 	
+	/**
+	 * calls the game method to add a new chicken
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void addChicken(ActionEvent e) {
 		game.addChicken();
 	}
 	
+	/**
+	 * calls the game method to add a new duck
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void addDuck(ActionEvent e) {
 		try {
 			game.addDuck();
@@ -159,14 +198,30 @@ public class GameController implements Initializable, Beginner {
 		}
 	}
 	
+	/**
+	 * calls the game method to add a new cow
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void addCow(ActionEvent e) {
 		game.addCow();
 	}
 	
+	/**
+	 * calls the game method to add a new dog
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void addDog(ActionEvent e) {
 		game.addDog();
 	}
 	
+	
+	/**
+	 * Saves the game using the file handler
+	 * 
+	 * @param e JAVAFX ACTIONEVENT
+	 */
 	public void saveGame(ActionEvent e) {
 		try {
 			fHandler.saveGame(game);

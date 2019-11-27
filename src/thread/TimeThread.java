@@ -9,6 +9,11 @@ public class TimeThread extends Thread {
 	Time time;
 	GameController gc;
 	
+	/**
+	 * A thread that connects the time with the game controller
+	 * @param t The time
+	 * @param gmc The game controller
+	 */
 	public TimeThread(Time t, GameController gmc) {
 		
 		time = t;
@@ -16,6 +21,9 @@ public class TimeThread extends Thread {
 		setDaemon(true);
 	}
 	
+	/**
+	 * This will be executed as a thread continiously. modifies the time and game contoller
+	 */
 	public void run() {
 		
 		while (true) {
