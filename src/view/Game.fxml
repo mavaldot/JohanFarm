@@ -70,8 +70,7 @@
                </image>
             </ImageView>
             <Label layoutX="657.0" layoutY="464.0" text="Cost: 500" />
-            <Button layoutX="665.0" layoutY="484.0" mnemonicParsing="false" onAction="#addDog" text="BUY" />
-            <Button layoutX="642.0" layoutY="514.0" mnemonicParsing="false" onAction="#addDog" text="VIEW DOGS" />
+            <Button layoutX="665.0" layoutY="514.0" mnemonicParsing="false" onAction="#addDog" text="BUY" />
          </children></AnchorPane>
    </children>
 </VBox>

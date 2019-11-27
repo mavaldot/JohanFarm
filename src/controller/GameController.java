@@ -47,10 +47,7 @@ public class GameController implements Initializable, Beginner {
 	@FXML private Label l6;
 	
 	private Time time;
-	private TimeThread tt;
-	
 	private Game game;
-	
 	private FileHandler fHandler;
 	
 	public void setStage(Stage stg) {
