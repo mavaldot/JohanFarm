@@ -108,7 +108,7 @@ public class GameController implements Initializable, Beginner {
 		moneyLabel.setText("hello");
 		
 		timeLabel = new Label();
-		timeLabel.setTranslateX(600);
+		timeLabel.setTranslateY(20);
 		timeLabel.setText("johan");
 		
 		ap.getChildren().add(moneyLabel);

@@ -47,7 +47,7 @@ public class FileHandler {
 			out.println(time.getSeconds() + "");
 		}
 		catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			throw new InvalidTimeException("There was a problem saving the time");
 		}
 		
@@ -73,7 +73,7 @@ public class FileHandler {
 			time = new Time(hours, minutes, seconds);
 		}
 		catch (NumberFormatException | IOException | InvalidTimeException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			throw new InvalidTimeFileException("Invalid time file. Check your txt time file");
 		}
 		return time;
@@ -96,7 +96,7 @@ public class FileHandler {
 			
 		} 
 		catch (IOException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			throw new GameSerializationException("There was a problem saving the game");
 		}
 		
@@ -120,7 +120,7 @@ public class FileHandler {
 			
 		} 
 		catch (IOException | ClassNotFoundException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			throw new GameSerializationException("There was a problem reading the saved game file");
 		}
 		

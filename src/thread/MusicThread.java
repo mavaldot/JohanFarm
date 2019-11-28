@@ -18,8 +18,15 @@ public class MusicThread extends Thread {
 	/**
 	 * Constructor
 	 */
+	private final static String musicFile = "afternoon.mp3";    
+	final static Media sound = new Media(new File(musicFile).toURI().toString());
+	final static MediaPlayer mediaPlayer = new MediaPlayer(sound);
+	
 	public MusicThread() {
 		
+
+		
+		setDaemon(true);
 	}
 	
 	/**
@@ -27,10 +34,7 @@ public class MusicThread extends Thread {
 	 */
 	public void run() {
 		
-		String musicFile = "afternoon.mp3";    
 
-		Media sound = new Media(new File(musicFile).toURI().toString());
-		MediaPlayer mediaPlayer = new MediaPlayer(sound);
 		mediaPlayer.play();
 		
 	}
